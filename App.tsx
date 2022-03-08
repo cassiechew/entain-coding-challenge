@@ -5,8 +5,6 @@ import { StatusBar } from 'expo-status-bar';
 import { NextRaces } from './components/Races';
 import { FilterBar } from './components/Races/filterBar';
 
-
-
 function HomeScreen() {
   return (
   <Layout style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>

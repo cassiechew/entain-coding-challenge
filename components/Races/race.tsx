@@ -3,7 +3,7 @@ import React from 'react';
 import RaceInfo from './raceInfo';
 
 /**
- * Component for showing an individual movie.
+ * Component for showing an individual race.
  * 
  * @Component
  */

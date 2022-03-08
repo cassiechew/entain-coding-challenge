@@ -33,7 +33,7 @@ const calculateCountdown = (time: number): timeLeftType => {
 }
 
 /**
- * Component to hold the movie information.
+ * Component to hold the race information.
  * 
  * @Component
  * @param {*} props 
@@ -54,8 +54,6 @@ export default function RaceInfo(props: any) {
       return () => clearTimeout(timer);
     });
 
-    // console.log(props.info.raceNo)
-
     let countdownString = timeLeft.minutes.toLocaleString('en-US', {
       minimumIntegerDigits: 2,
       useGrouping: false
@@ -72,7 +70,3 @@ export default function RaceInfo(props: any) {
       </>
     )
 }
-
-// const componentDeleter = (filtered: {id: string, Elem: JSX.Element}[]) => {
-  
-// };

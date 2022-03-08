@@ -2,6 +2,7 @@ import React from 'react';
 import { TabBar, Tab } from '@ui-kitten/components';
 import { racesCategories } from './constants';
 
+// A bar to handle the filtering of races
 export const FilterBar = (props: {categorySwitcher: (category: racesCategories) => void}) => {
 
   const [selectedIndex, setSelectedIndex] = React.useState(0);

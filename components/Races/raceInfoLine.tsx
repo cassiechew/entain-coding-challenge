@@ -2,7 +2,7 @@ import { Text } from '@ui-kitten/components';
 import React from 'react';
 
 /**
- * Component to hold the movie information.
+ * Component to hold the race information.
  * 
  * @Component
  * @param {*} props 
