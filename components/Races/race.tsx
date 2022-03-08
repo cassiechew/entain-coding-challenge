@@ -1,4 +1,3 @@
-import { Layout } from '@ui-kitten/components';
 import React from 'react';
 import RaceInfo from './raceInfo';
 

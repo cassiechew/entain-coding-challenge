@@ -9,6 +9,7 @@ type timeLeftType = {
   seconds: number
 }
 
+// calculates the remaining time till the start of the race
 const calculateCountdown = (time: number): timeLeftType => {
   let difference = +new Date(time) - +new Date();
 
@@ -19,17 +20,14 @@ const calculateCountdown = (time: number): timeLeftType => {
     "seconds": 0
   };
 
-  if (difference > -60000) {
-    timeLeft = {
-      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-      minutes: Math.floor((difference / 1000 / 60) % 60),
-      seconds: Math.floor((difference / 1000) % 60)
-    };
-  }
+  timeLeft = {
+    days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+    hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+    minutes: Math.floor((difference / 1000 / 60) % 60),
+    seconds: Math.floor((difference / 1000) % 60)
+  };
 
   return timeLeft;
-
 }
 
 /**
