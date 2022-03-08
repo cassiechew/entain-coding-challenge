@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BottomNavigation, BottomNavigationTab } from '@ui-kitten/components';
 import { racesCategories } from './constants';
 
 // A bar to handle the filtering of races
-export const FilterBar = (props: {categorySwitcher: (category: racesCategories) => void}) => {
-  const [selectedIndex, setSelectedIndex] = React.useState(0);
+export const FilterBar = (props: {
+    categorySwitcher: (category: racesCategories) => void,
+    selectedIndex: number,
+    setSelectedIndex: (index: number) => void
+  }) => {
+  
   return (
     <BottomNavigation
-      selectedIndex={selectedIndex}
+      appearance={"noIndicator"}
+      selectedIndex={props.selectedIndex}
       onSelect={index => {
-        setSelectedIndex(index)
+        props.setSelectedIndex(index)
+        console.log(index)
+        console.log(props.selectedIndex)
         switch(index) {
           case 0:
             props.categorySwitcher(racesCategories.All)

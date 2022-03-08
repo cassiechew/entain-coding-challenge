@@ -68,6 +68,7 @@ export const useGetNextRaces = () => {
 export default function NextRaces() {
   const [racesToView, setRacestoView] = useState([{id: "", category: "", Elem: <></>}])
   const [categoryToView, setCategory] = useState(racesCategories.All)
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   const {
       isLoading,
@@ -124,7 +125,11 @@ export default function NextRaces() {
             )}
           )}
         </DataContext.Consumer>
-        <FilterBar categorySwitcher={setCategory} />
+        <FilterBar 
+          categorySwitcher={setCategory}
+          selectedIndex={selectedIndex}
+          setSelectedIndex={setSelectedIndex}
+          />
       </DataContext.Provider>
     }
     else {
