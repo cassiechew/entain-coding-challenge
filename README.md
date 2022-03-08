@@ -2,6 +2,24 @@
 
 This is a response to the entain coding challenge.
 
+This project was scaffolded using expo.
+
+## Running instructions
+
+To run this you will need to 
+
+```
+yarn install
+```
+
+then 
+
+```
+expo start
+```
+
+scan the qr code generated, and assuming you have expo, the app should run. 
+
 ## Decisions
 
 1. I have assumed that the data I recieve is in order by countdown.
