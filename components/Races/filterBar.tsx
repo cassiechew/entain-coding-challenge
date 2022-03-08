@@ -11,7 +11,6 @@ export const FilterBar = (props: {
   
   return (
     <BottomNavigation
-      appearance={"noIndicator"}
       selectedIndex={props.selectedIndex}
       onSelect={index => {
         props.setSelectedIndex(index)
