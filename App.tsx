@@ -1,6 +1,6 @@
 
 import * as eva from '@eva-design/eva';
-import { ApplicationProvider, Divider, Layout, Text } from '@ui-kitten/components';
+import { ApplicationProvider, Divider, Layout, Tab, TabBar, Text } from '@ui-kitten/components';
 import { StatusBar } from 'expo-status-bar';
 import { NextRaces } from './components/Races';
 import { FilterBar } from './components/Races/filterBar';
