@@ -11,16 +11,16 @@ export const FilterBar = (props: {categorySwitcher: (category: racesCategories) 
       onSelect={index => {
         setSelectedIndex(index)
         switch(index) {
-          case 1:
+          case 0:
             props.categorySwitcher(racesCategories.All)
             break;
-          case 2:
+          case 1:
             props.categorySwitcher(racesCategories.Greyhound)
             break;
-          case 3:
+          case 2:
             props.categorySwitcher(racesCategories.Harness)
             break;
-          case 4:
+          case 3:
             props.categorySwitcher(racesCategories.Horse)
             break;   
         }

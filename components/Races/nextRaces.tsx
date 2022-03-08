@@ -13,7 +13,7 @@ import { racesCategories } from './constants';
  * @param {{method: string, headers: {string: string}}} options 
  */
  export const getNextRaces = async (options?: AxiosRequestConfig) => {
-  return await axios.get("https://api.neds.com.au/rest/v1/racing/?method=nextraces&count=15", options)
+  return await axios.get("https://api.neds.com.au/rest/v1/racing/?method=nextraces&count=25", options)
   .then(r => {
     const raceData = r.data.data.race_summaries
     const formattedData: {id: "", category: "", Elem: JSX.Element}[] = r.data.data.next_to_go_ids.map((id: string) => {
@@ -93,14 +93,13 @@ export default function NextRaces() {
   const Render = () => {
     if (!isLoading) {
       return <DataContext.Provider value={value}>
-        <FilterBar categorySwitcher={setCategory} />
         <DataContext.Consumer>
-          {value => value.data.length > 5 ? value.data.slice(0,5).filter(v => {
+          {value => value.data.length > 5 ? value.data.filter(v => {
             if (categoryToView === racesCategories.All) {
               return true
             }
             return v.category === categoryToView
-          }).map((item: any, index: number) => {
+          }).slice(0,5).map((item: any, index: number) => {
               return(
                 <Card
                   key={index}           
@@ -109,7 +108,12 @@ export default function NextRaces() {
                   {item.Elem}
                 </Card>
               )}
-          ) : value.data.map((item: any, index: number) => {
+          ) : value.data.filter(v => {
+            if (categoryToView === racesCategories.All) {
+              return true
+            }
+            return v.category === categoryToView
+          }).map((item: any, index: number) => {
             return(
               <Card
                 key={index}           
@@ -120,6 +124,7 @@ export default function NextRaces() {
             )}
           )}
         </DataContext.Consumer>
+        <FilterBar categorySwitcher={setCategory} />
       </DataContext.Provider>
     }
     else {
