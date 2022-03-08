@@ -13,7 +13,7 @@ import { racesCategories } from './constants';
  * @param {{method: string, headers: {string: string}}} options 
  */
  export const getNextRaces = async (options?: AxiosRequestConfig) => {
-  return await axios.get("https://api.neds.com.au/rest/v1/racing/?method=nextraces&count=25", options)
+  return await axios.get("https://api.neds.com.au/rest/v1/racing/?method=nextraces&count=50", options)
   .then(r => {
     const raceData = r.data.data.race_summaries
     const formattedData: {id: "", category: "", Elem: JSX.Element}[] = r.data.data.next_to_go_ids.map((id: string) => {
