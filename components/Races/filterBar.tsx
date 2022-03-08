@@ -15,8 +15,6 @@ export const FilterBar = (props: {
       selectedIndex={props.selectedIndex}
       onSelect={index => {
         props.setSelectedIndex(index)
-        console.log(index)
-        console.log(props.selectedIndex)
         switch(index) {
           case 0:
             props.categorySwitcher(racesCategories.All)
