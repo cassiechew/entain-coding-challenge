@@ -46,7 +46,7 @@ export default function RaceInfo(props: any) {
       const timer = setTimeout(() => {
         setTimeLeft(calculateCountdown(props.info.startTime));
       }, 1000);
-      if (timeLeft.minutes <= -2) {
+      if (timeLeft.seconds < -59) {
         let filtered = data.filter(v => v.id !== props.info.id)
         setData(filtered)
       }
